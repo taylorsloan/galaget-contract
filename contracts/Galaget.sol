@@ -41,16 +41,16 @@ contract Galaget is
 
     bytes4 private constant _INTERFACE_ID_ERC2981 = 0x2a55205a;
 
-    uint16 constant TIER_4_UPPER_BOUND = 4444;
-    uint16 constant TIER_BOUND = TIER_4_UPPER_BOUND / 4;
-    uint16 constant TIER_1_UPPER_BOUND = TIER_BOUND;
-    uint16 constant TIER_2_UPPER_BOUND = TIER_BOUND * 2;
-    uint16 constant TIER_3_UPPER_BOUND = TIER_BOUND * 3;
+    uint16 public constant TIER_4_UPPER_BOUND = 4444;
+    uint16 public constant TIER_BOUND = TIER_4_UPPER_BOUND / 4;
+    uint16 public constant TIER_1_UPPER_BOUND = TIER_BOUND;
+    uint16 public constant TIER_2_UPPER_BOUND = TIER_BOUND * 2;
+    uint16 public constant TIER_3_UPPER_BOUND = TIER_BOUND * 3;
 
-    uint256 constant TIER_1_PRICE = 20000000 gwei;
-    uint256 constant TIER_2_PRICE = 40000000 gwei;
-    uint256 constant TIER_3_PRICE = 60000000 gwei;
-    uint256 constant TIER_4_PRICE = 80000000 gwei;
+    uint256 public constant TIER_1_PRICE = 20000000 gwei;
+    uint256 public constant TIER_2_PRICE = 40000000 gwei;
+    uint256 public constant TIER_3_PRICE = 60000000 gwei;
+    uint256 public constant TIER_4_PRICE = 80000000 gwei;
 
     /**
      * @dev Grants `DEFAULT_ADMIN_ROLE`, `MINTER_ROLE` and `PAUSER_ROLE` to the
