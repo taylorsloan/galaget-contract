@@ -38,6 +38,10 @@ module.exports = {
       chainId: 1337,
       accounts: [process.env.PRIVATE_KEY_LOCALHOST]
     },
+    mainnet: {
+      url: "https://mainnet.infura.io/v3/a5744db4c3304fea8b4059d3018b1a89",
+      accounts: [process.env.PRIVATE_KEY_MAINNET]
+    }
   },
   mocha: {
     timeout: 400000

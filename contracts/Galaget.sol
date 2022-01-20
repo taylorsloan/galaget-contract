@@ -35,6 +35,7 @@ contract Galaget is
     RoyaltiesV2Impl {
 
     string private _baseTokenURI;
+    string internal _metadataURI;
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
@@ -61,7 +62,7 @@ contract Galaget is
      */
     constructor(string memory name, string memory symbol, string memory baseTokenURI) ERC721(name, symbol) {
         _baseTokenURI = baseTokenURI;
-
+        _metadataURI = "https://galaget.com/galaget-contract-metadata.json";
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
 
         _setupRole(MINTER_ROLE, _msgSender());
@@ -166,5 +167,9 @@ contract Galaget is
             return true;
         }
         return super.supportsInterface(interfaceId);
+    }
+
+    function contractURI() public view returns (string memory) {
+        return _metadataURI;
     }
 }

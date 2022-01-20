@@ -7,9 +7,16 @@ const NAME = "Galaget";
 const SYMBOL = "GLGT";
 const BASE_URI = "ipfs://FAKE-CID/";
 const TEST_WALLET = "0x243dc2F47EC5A0693C5c7bD39b31561cCd4B0e97";
+const METADATA_URI = "https://galaget.sfo3.cdn.digitaloceanspaces.com/galaget-contract-metadata.json";
 // "Galaget", "GLGT", "ipfs://bafybeiaj5nemgylrn6qex6vnpqzkfe5xsypkz4pmoavsw5jlpj7cf2gt2a/"
 
 describe("Galaget", function () {
+    it("Should support contract level metadata", async function () {
+        const Galaget = await ethers.getContractFactory("Galaget");
+        const galaget = await Galaget.deploy(NAME, SYMBOL, BASE_URI);
+        await galaget.deployed();
+        expect(await galaget.contractURI()).to.be.equal(METADATA_URI);
+    });
     it("Should mint a new token", async function () {
         const Galaget = await ethers.getContractFactory("Galaget");
         const galaget = await Galaget.deploy(NAME, SYMBOL, BASE_URI);

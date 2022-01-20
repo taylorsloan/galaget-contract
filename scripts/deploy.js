@@ -4,9 +4,9 @@
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
 const hre = require("hardhat");
-const NAME = "Galaget";
+const NAME = "Galaget GA-NFT";
 const SYMBOL = "GLGT";
-const BASE_URI = "ipfs://FAKE_CID/";
+const BASE_URI = "ipfs://QmatEuRrPqqHQPPM2uiVPa4RbHcD7NCpuYEbbX6LMcPYhD/";
 
 async function main() {
     // Hardhat always runs the compile task when running scripts with its command
