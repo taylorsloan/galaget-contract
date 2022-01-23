@@ -3,10 +3,10 @@
 //
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
-const hre = require("hardhat");
-const NAME = "Galaget GA-NFT";
-const SYMBOL = "GLGT";
-const BASE_URI = "ipfs://QmatEuRrPqqHQPPM2uiVPa4RbHcD7NCpuYEbbX6LMcPYhD/";
+const {ethers} = require("hardhat");
+const NAME = process.env.CONTRACT_NAME;
+const SYMBOL = process.env.CONTRACT_SYMBOL;
+const BASE_URI = process.env.CONTRACT_BASE_URI;
 
 async function main() {
     // Hardhat always runs the compile task when running scripts with its command
@@ -17,7 +17,8 @@ async function main() {
     // await hre.run('compile');
 
     // We get the contract to deploy
-    const Galaget = await hre.ethers.getContractFactory("Galaget");
+    const Galaget = await ethers.getContractFactory("Galaget");
+    console.log("Deploying Galaget...");
     const galaget = await Galaget.deploy(NAME, SYMBOL, BASE_URI);
     await galaget.deployed();
     console.log("Galaget deployed to:", galaget.address);
